@@ -8,6 +8,17 @@ public class Main
 		String[] a = {"MAIN"};
         processing.core.PApplet.runSketch( a, new HelloProcessing());
     }
+
+	public void cat()
+    {
+        Cat ginger = new Cat("Ginger");
+
+        while(ginger.getNumLives() > 0)
+        {
+            ginger.kill();
+        }
+        ginger.kill();
+    }
 	
 	public static void main(String[] args)
 	{
@@ -16,6 +27,13 @@ public class Main
 		Dog penny = new Dog();
 		penny.setName("Penny");
 		penny.speak();
+
+		Cat ginger = new Cat("Ginger");
+
+        while(ginger.getNumLives() > 0)
+        {
+            ginger.kill();
+        }
+        ginger.kill();
 	}
-	
 }
