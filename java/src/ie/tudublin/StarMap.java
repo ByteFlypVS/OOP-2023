@@ -68,8 +68,8 @@ public class StarMap extends PApplet
 
 	public void printStars()
 	{	
-		for(Star s:stars)
-		{
+		for(Star s:stars) // For s in stars list range
+ 		{
 			System.out.println(s);
 		}
 	}
