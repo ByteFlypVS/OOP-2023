@@ -35,4 +35,21 @@ public class Star
         this.zG = zG;
         this.absMag = absMag;
     }
+    
+    public String toString()
+    {
+        return hab + "\t\t" + displayName + "\t\t" + distance + "\t\t" + xG + "\t\t" + yG + "\t\t" + zG + "\t\t" + absMag;
+    }
+
+    /*
+    public float xCor()
+    {
+        return xG;
+    }
+
+    public float yCor()
+    {
+        return yG;
+    }
+    */
 }

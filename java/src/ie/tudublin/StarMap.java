@@ -1,5 +1,6 @@
 package ie.tudublin;
 
+import java.util.ArrayList;
 import processing.core.PApplet;
 import processing.data.Table;
 import processing.data.TableRow;
@@ -15,6 +16,8 @@ public class StarMap extends PApplet
 	{
 		colorMode(HSB);
 		background(0);
+		loadStars();
+		printStars();
 	}
 	
 	public void drawGrid()
@@ -38,6 +41,8 @@ public class StarMap extends PApplet
 		}
 	}
 
+	ArrayList<Star> stars = new ArrayList<Star>(); // Array list setup for use below (loadStars)
+
 	void loadStars()
 	{
 		Table table = loadTable("HabHYG15ly.csv", "header");
@@ -48,10 +53,43 @@ public class StarMap extends PApplet
 			stars.add(s);
 		}
 	}
+
+	/*
+	public void drawStars()
+	{	
+		for(Star s:stars)
+		{
+			float x = s.xCor();
+			float y = s.yCor();
+			circle(x+(width/2), y+(height/2), 10);
+		}
+	}
+	*/
+
+	public void printStars()
+	{	
+		for(Star s:stars)
+		{
+			System.out.println(s);
+		}
+	}
+
+	public void drawStars()
+	{
+		for(Star s:stars)
+		{
+			float x = map(s.xG, -5, 5, 50, width-50);
+			float y = map(s.yG, -5, 5, 50, width-50);
+			
+			stroke(0, 255, 255);
+			noFill();
+			circle(x, y, s.absMag);
+		}
+	}
 		
 	public void draw()
 	{
 		drawGrid();
-		loadStars();
+		drawStars();
 	}
 }
