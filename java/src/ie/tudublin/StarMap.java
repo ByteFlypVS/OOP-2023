@@ -84,6 +84,10 @@ public class StarMap extends PApplet
 			stroke(0, 255, 255);
 			noFill();
 			circle(x, y, s.absMag);
+
+			stroke(100, 255, 255);
+			line(x-5, y, x+5, y);
+			line(x, y-5, x, y+5);
 		}
 	}
 		
