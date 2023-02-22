@@ -47,7 +47,7 @@ public class Audio1 extends PApplet
         // ab = ai.mix; 
 
         // And comment the next two lines out
-        ap = minim.loadFile("heroplanet.mp3", 1024);
+        ap = minim.loadFile("superMax.mp3", 1024);
         ap.play();
         ab = ap.mix;
         colorMode(HSB);
@@ -91,10 +91,21 @@ public class Audio1 extends PApplet
                     line(i, halfH + f, i, halfH - f);                    
                 }
                 break;
-        case 1:
-            background(0);            
-            break;
 
+            case 1:
+                background(0);
+                stroke(255);
+                fill(100, 255, 255);
+                //circle(100, y, 50);
+                y += random(-10, 10);
+                smoothedY = lerp(smoothedY, y, 0.1f);        
+                ///circle(200, smoothedY, 50);
+                circle(width / 2, halfH, smoothedAmplitude * 100);     
+                break;
+
+            default:
+                background(0);
+                break;
         }
         
 
