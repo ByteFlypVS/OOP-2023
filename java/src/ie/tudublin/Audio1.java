@@ -47,7 +47,7 @@ public class Audio1 extends PApplet
         // ab = ai.mix; 
 
         // And comment the next two lines out
-        ap = minim.loadFile("swing.mp3", 1024);
+        ap = minim.loadFile("superMax.mp3", 1024);
         ap.play();
         ab = ap.mix;
         colorMode(HSB);
@@ -117,6 +117,24 @@ public class Audio1 extends PApplet
                 circle(cx,cy, smoothedAmplitude * 500);
                 */
                 break;
+
+            case 5:
+                background(0);
+                for(int i = 0 ; i < ab.size() ; i ++)
+                {
+                    float c = map(i, 0, ab.size(), 0, 255);
+                    stroke(c, 255, 255);
+                    noFill();
+                    float f = ab.get(i) * halfH;
+                    //line(f, halfH + i, f, halfH - i);
+                    //line(halfH - i, f, halfH + i, f);
+                    //line(halfH - i, halfH + i, f, f);
+                    line(i, i, halfH + f, height);
+                    line(height, halfH + f, i, i);
+                    //circle(cx, cy, f * smoothedAmplitude * 8);
+                }
+                break;
+
 
             default:
                 background(0);
