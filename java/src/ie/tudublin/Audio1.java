@@ -92,15 +92,17 @@ public class Audio1 extends PApplet
                 }
                 break;
 
-            case 1:
+            case 3:
                 background(0);
-                stroke(255);
-                fill(100, 255, 255);
-                //circle(100, y, 50);
+                noStroke();
                 y += random(-10, 10);
-                smoothedY = lerp(smoothedY, y, 0.1f);        
-                ///circle(200, smoothedY, 50);
-                circle(width / 2, halfH, smoothedAmplitude * 100);     
+                smoothedY = lerp(smoothedY, y, 0.1f);
+                fill(smoothedAmplitude * 500, 255, 255);
+                circle(width / 2, height / 2, smoothedAmplitude * 500);
+                fill(smoothedAmplitude * 300, 255, 255);
+                circle(smoothedY + width / 4, smoothedY + height / 4, smoothedAmplitude * 250);
+                fill(smoothedAmplitude * 700, 255, 255);
+                circle(smoothedY -  width / 6, smoothedY - height / 6, smoothedAmplitude * 750);
                 break;
 
             default:
