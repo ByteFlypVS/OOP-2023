@@ -47,7 +47,7 @@ public class Audio1 extends PApplet
         // ab = ai.mix; 
 
         // And comment the next two lines out
-        ap = minim.loadFile("superMax.mp3", 1024);
+        ap = minim.loadFile("swing.mp3", 1024);
         ap.play();
         ab = ap.mix;
         colorMode(HSB);
@@ -82,6 +82,7 @@ public class Audio1 extends PApplet
         switch (mode) {
 			case 0:
                 background(0);
+
                 for(int i = 0 ; i < ab.size() ; i ++)
                 {
                     //float c = map(ab.get(i), -1, 1, 0, 255);
@@ -94,15 +95,27 @@ public class Audio1 extends PApplet
 
             case 3:
                 background(0);
-                noStroke();
+                for(int i = 0 ; i < ab.size() ; i ++)
+                {
+                    float c = map(i, 0, ab.size(), 0, 255);
+                    stroke(c, 255, 255);
+                    noFill();
+                    float f = ab.get(i) * halfH;
+                    circle(cx, cy, f * smoothedAmplitude * 8);
+                }
+
+                /*
+                noFill();
                 y += random(-10, 10);
                 smoothedY = lerp(smoothedY, y, 0.1f);
-                fill(smoothedAmplitude * 500, 255, 255);
-                circle(width / 2, height / 2, smoothedAmplitude * 500);
-                fill(smoothedAmplitude * 300, 255, 255);
-                circle(smoothedY + width / 4, smoothedY + height / 4, smoothedAmplitude * 250);
-                fill(smoothedAmplitude * 700, 255, 255);
-                circle(smoothedY -  width / 6, smoothedY - height / 6, smoothedAmplitude * 750);
+                //fill(smoothedAmplitude * 500, 255, 255);
+                stroke(smoothedAmplitude * 500, 255, 255);
+                circle(cx,cy, smoothedAmplitude * 1500);
+                stroke(smoothedAmplitude * 500, 255, 255);
+                circle(cx,cy, smoothedAmplitude * 1000);
+                stroke(smoothedAmplitude * 500, 255, 255);
+                circle(cx,cy, smoothedAmplitude * 500);
+                */
                 break;
 
             default:
