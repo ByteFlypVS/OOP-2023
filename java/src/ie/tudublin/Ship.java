@@ -7,13 +7,18 @@ public class Ship
 {
     private PVector pos;
     private PApplet p;
+    private float rot;
+    private int c;
+    private float size;
+    private float halfSize;
 
     public Ship(float x, float y, float size, int c, PApplet p)
     {
         pos = new PVector(x, y);
         this.size = size;
         this.c = c;       
-        this.p = p;  
+        this.p = p;
+        halfSize = size/2;  
     }
 
     public PVector getPos()
@@ -56,10 +61,6 @@ public class Ship
         this.size = size;
     }
 
-    private float rot;
-    private int c;
-    private float size;
-
     public void move()
     {
         if(p.keyPressed)
@@ -88,5 +89,12 @@ public class Ship
 
     public void render()
     {
+        p.translate(pos.x, pos.y);
+        p.rotate(rot);
+        p.stroke(255);
+        p.line(-halfSize, halfSize, 0, -halfSize);
+        p.line(0, -halfSize, halfSize, halfSize);
+        p.line(halfSize, halfSize, 0, 0);
+        p.line(0, 0, -halfSize, halfSize);
     }
 }
