@@ -13,8 +13,6 @@ public class YASC extends PApplet
 	public void setup()
 	{
 	}
-
-	
 	
 	public void draw()
 	{
