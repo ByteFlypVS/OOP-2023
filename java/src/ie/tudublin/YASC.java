@@ -10,15 +10,13 @@ public class YASC extends PApplet
 		size(500, 500);
 	}
 
-	public void setup() {
-		
-		
+	public void setup()
+	{
 	}
 
 	
 	
 	public void draw()
-	{	
-		
+	{
 	}
 }
