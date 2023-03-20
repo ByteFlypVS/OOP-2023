@@ -101,6 +101,7 @@ public class Ship
         p.translate(pos.x, pos.y);
         p.rotate(rot);
         p.stroke(255);
+        
         p.line(-halfSize, halfSize, 0, -halfSize);
         p.line(0, -halfSize, halfSize, halfSize);
         p.line(halfSize, halfSize, 0, 0);

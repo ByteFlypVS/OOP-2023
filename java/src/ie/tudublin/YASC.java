@@ -5,6 +5,7 @@ import processing.core.PApplet;
 public class YASC extends PApplet
 {
 	Ship ship;
+	Ship enemy;
 
 	public void settings()
 	{
