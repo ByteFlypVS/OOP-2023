@@ -61,7 +61,15 @@ public class Ship
     private float size;
 
     public void move()
-    {}
+    {
+        if(p.keyPressed)
+        {
+            if(p.keyCode == PApplet.LEFT)
+            {
+                pos.x--;
+            }
+        }
+    }
 
     public void render()
     {
