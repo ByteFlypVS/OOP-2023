@@ -11,10 +11,12 @@ public class Ship
     private int c;
     private float size;
     private float halfSize;
+    private PVector forward;
 
     public Ship(float x, float y, float size, int c, PApplet p)
     {
         pos = new PVector(x, y);
+        forward = new PVector(0, -1);
         this.size = size;
         this.c = c;       
         this.p = p;
@@ -63,26 +65,33 @@ public class Ship
 
     public void move()
     {
-        if(p.keyPressed)
+        forward.x = PApplet.sin(rot);
+        forward.y = -PApplet.cos(rot);
+
+        if(p.keyPressed == true)
         {
             if(p.keyCode == PApplet.LEFT)
             {
-                pos.x--;
+                //pos.x--;
+                rot -= 0.1f; // Rotate ship anti-clockwise
             }
 
             if(p.keyCode == PApplet.RIGHT)
             {
-                pos.x++;
+                //pos.x++;
+                rot += 0.1f; // Rotate ship clockwise
             }
 
             if(p.keyCode == PApplet.UP)
             {
-                pos.y--;
+                pos.x += forward.x;
+                pos.y += forward.y;
             }
 
             if(p.keyCode == PApplet.DOWN)
             {
-                pos.y++;
+                pos.x -= forward.x;
+                pos.y -= forward.y;
             }
         }
     }
