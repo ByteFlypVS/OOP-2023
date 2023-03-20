@@ -68,6 +68,21 @@ public class Ship
             {
                 pos.x--;
             }
+
+            if(p.keyCode == PApplet.RIGHT)
+            {
+                pos.x++;
+            }
+
+            if(p.keyCode == PApplet.UP)
+            {
+                pos.y--;
+            }
+
+            if(p.keyCode == PApplet.DOWN)
+            {
+                pos.y++;
+            }
         }
     }
 
