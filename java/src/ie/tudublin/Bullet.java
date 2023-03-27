@@ -33,5 +33,8 @@ public class Bullet
     {
         forward.x = PApplet.sin(rotation);
         forward.y = PApplet.cos(rotation);
+
+        position.add(PVector.mult(forward, speed));
+        // add() method is a static method
     }
 }
