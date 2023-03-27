@@ -1,11 +1,16 @@
 package ie.tudublin;
 
+import java.util.ArrayList;
+
 import processing.core.PApplet;
 
 public class YASC extends PApplet
 {
 	Ship ship;
 	Ship ship1;
+	
+	// This array list is a generic, can only store classes
+	ArrayList<Bullet> bullets = new ArrayList<Bullet>(); // <> denotes class types being passed into a data type
 
 
 	public void settings()
@@ -27,5 +32,11 @@ public class YASC extends PApplet
 
 		ship1.render();
 		ship1.move();
+
+		for(Bullet b : bullets) // foreach() loop
+		{
+			b.render();
+			b.move();
+		}
 	}
 }
