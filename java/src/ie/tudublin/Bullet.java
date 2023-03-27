@@ -35,5 +35,10 @@ public class Bullet
         forward.y = PApplet.cos(rotation);
 
         position.add(PVector.mult(forward, speed)); // add() method is a static method
+
+        if(position.x > p.width || position.x < 0 || position.y > p.height || position.y < 0)
+        {
+            ((YASC)p).bullets.remove(this);
+        }
     }
 }

@@ -33,10 +33,13 @@ public class YASC extends PApplet
 		ship1.render();
 		ship1.move();
 
-		for(Bullet b : bullets) // foreach() loop
+		for(Bullet b : bullets) // foreach() loop, inappropriate if wanting to remove bullets from screen (see move() in Bullet class)
 		{
 			b.render();
 			b.move();
 		}
+
+		fill(255);
+		text("Shots fired: " + bullets.size(), 50, 50);
 	}
 }
