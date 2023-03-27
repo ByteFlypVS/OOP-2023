@@ -81,7 +81,8 @@ public class Ship {
 
             if (p.key == ' ')
             {
-                Bullet b = new Bullet(pos.x, pos.y, rot, p);
+                PVector inFront = PVector.add(pos, PVector.mult(forward, 30));
+                Bullet b = new Bullet(inFront.x, inFront.y, rot, p);
 
                 ((YASC)p).bullets.add(b);
             }
