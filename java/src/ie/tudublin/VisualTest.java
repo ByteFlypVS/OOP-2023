@@ -11,6 +11,9 @@ public class VisualTest extends PApplet
     // Constructor variables
     Wavebox box1;
     Wavebox box2;
+    Wavebox box3;
+
+    Radar circle1;
 
     public void control()
     {}
@@ -25,14 +28,23 @@ public class VisualTest extends PApplet
     {
         frameRate(120);
 
-        colorMode(RGB);
+        colorMode(HSB);
         background(0);
         noFill();
 
-        box1 = new Wavebox(100, 100, this);
-        box2 = new Wavebox(100, 400, this);
+        box1 = new Wavebox(100, 100, "Narrowband", this);
+        box2 = new Wavebox(100, 400, "Broadband", this);
+        box3 = new Wavebox(100, 700, "Background", this);
+
+        circle1 = new Radar(width, height, this);
     }
 
     public void draw()
-    {}
+    {
+        box1.screen();
+        box2.screen();
+        box3.screen();
+
+        circle1.screen();
+    }
 }
