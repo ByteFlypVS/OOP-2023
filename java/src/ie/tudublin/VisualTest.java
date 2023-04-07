@@ -32,18 +32,17 @@ public class VisualTest extends PApplet
         background(0);
         noFill();
 
+        // Create instances of object classes
         box1 = new Wavebox(100, 100, "Narrowband", this);
         box2 = new Wavebox(100, 400, "Broadband", this);
-        box3 = new Wavebox(100, 700, "Background", this);
 
-        circle1 = new Radar(width, height, this);
+        circle1 = new Radar(width, height, TWO_PI, this);
     }
 
     public void draw()
     {
         box1.screen();
         box2.screen();
-        box3.screen();
 
         circle1.screen();
     }
